@@ -1,7 +1,11 @@
-function SearchHeader() {
+function SearchHeader({ search }) {
+  const handleFormSubmit = (event) => {
+    search("kubra");
+    event.preventDefault(); //sayfanın yenilenmesini önler
+  };
   return (
     <div className="searchDiv">
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <label>Ne Arıyorsunuz?</label>
         <input type="text" />
       </form>
